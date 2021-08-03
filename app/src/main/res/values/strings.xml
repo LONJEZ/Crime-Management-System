@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Crime Management System</string>
+    <string name="login">login</string>
+    <string name="username">Username</string>
+    <string name="sign_up_here">sign up here</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="fullname">Fullname</string>
+    <string name="email">Email</string>
+    <string name="log_in_here">Log in here</string>
+
+
 </resources>
