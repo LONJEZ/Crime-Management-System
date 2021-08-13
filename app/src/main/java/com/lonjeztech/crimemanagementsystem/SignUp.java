@@ -19,23 +19,23 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class SignUp extends AppCompatActivity {
 
-    TextInputEditText textInputEditTextFullname,textInputEditTextUsername,textInputEditTextPassword,textInputEditTextEmail;
-    Button buttonSignUp;
-    TextView textViewLogin;
-    ProgressBar progressBar;
+    private  TextInputEditText textInputEditTextFullname,textInputEditTextUsername,textInputEditTextPassword,textInputEditTextEmail;
+    private Button buttonSignUp;
+    private TextView textViewLogin;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        textInputEditTextFullname = findViewById(R.id.fullname);
-        textInputEditTextUsername = findViewById(R.id.username);
-        textInputEditTextPassword = findViewById(R.id.password);
-        textInputEditTextEmail = findViewById(R.id.email);
-        buttonSignUp = findViewById(R.id.buttonSignUp);
-        textViewLogin = findViewById(R.id.loginText);
-        progressBar = findViewById(R.id.progress);
+        textInputEditTextFullname = (TextInputEditText) findViewById(R.id.full_name);
+        textInputEditTextUsername = (TextInputEditText) findViewById(R.id.username);
+        textInputEditTextPassword = (TextInputEditText) findViewById(R.id.password);
+        textInputEditTextEmail = (TextInputEditText) findViewById(R.id.email);
+        buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
+        textViewLogin =(TextView) findViewById(R.id.loginText);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
 
         textViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +76,7 @@ public class SignUp extends AppCompatActivity {
                             data[1] = username;
                             data[2] = password;
                             data[3] = email;
-                            PutData putData = new PutData("http://192.168.43.167/loginregister/signup.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.0.21/loginregister/signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -104,9 +104,9 @@ public class SignUp extends AppCompatActivity {
 
             }
         });
-        }
-
-
     }
+
+
+}
 
 
